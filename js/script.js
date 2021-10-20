@@ -33,6 +33,7 @@ guessButton.addEventListener("click", function (e) {
     // Is it a single letter?
     const luckyGuess = validateInput(guess);
 
+    // check the function above is returning a valid letter then pass as argument to makeGuess function
     if (luckyGuess) {
     makeGuess(guess);
     }
@@ -57,10 +58,13 @@ const validateInput = function (input) {
 };
 
 const makeGuess = function (guess) {
+    // transform input letters into uppercase
     guess = guess.toUpperCase();
+    //  check if letter has already been guessed
     if (guessedLetters.includes(guess)) {
         message.innerText = "Sorry, you've already chosen that one. Try again.";
     } else {
+        // if it hasn't then add it to the guessed letters array
         guessedLetters.push(guess);
         console.log(guessedLetters);
     }
