@@ -84,7 +84,7 @@ const letterUpdate = function () {
     }
 };
 
-// function with guessedLetters array as para
+// function to update the word in progressed with correctly guessed letters, using guessedLetters array as para
 const wordUpdate = function (guessedLetters) {
     const wordUpper = word.toUpperCase();
     // split the letters into an array
