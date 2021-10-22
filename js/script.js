@@ -8,7 +8,7 @@ const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
 
 let word = "magnolia";
-const guessedLetters = [];
+let guessedLetters = [];
 let remainingGuesses = 8;
 // fetch different words from a text file
 const getWord = async function () {
@@ -147,7 +147,29 @@ const checkWin = function () {
     if (word.toUpperCase() === wordInProgress.innerHTML) {
         message.classList.add("win");
         message.innerHTML = `<p class="highlight">You guessed the word! Congrats!</p>`
+        startOver();
         }
 };
 
 
+const startOver = function (){
+    guessButton.classList.add("hide");
+    remainingGuess.classList.add("hide");
+    guessedLettersElement.classList.add("hide");
+    playAgainButton.classList.remove("hide");
+};
+
+playAgainButton.addEventListener("click", function () {
+    message.classList.remove("win");
+    message.innerText = "";
+    guessedLettersElement.innerHTML = "";
+    let remainingGuesses = 8;
+    guessedLetters = [];
+    remainingSpan.innerHTML = `${remainingGuesses} guesses`;
+    playAgainButton.classList.add("hide");
+    guessButton.classList.remove("hide");
+    remainingGuess.classList.remove("hide");
+    guessedLettersElement.classList.remove("hide");
+
+    getWord();
+});
