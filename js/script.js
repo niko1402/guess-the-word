@@ -151,7 +151,7 @@ const checkWin = function () {
         }
 };
 
-
+// when player chooses to play again, hide guess button and remaining guesses, and show play again button
 const startOver = function (){
     guessButton.classList.add("hide");
     remainingGuess.classList.add("hide");
@@ -159,6 +159,7 @@ const startOver = function (){
     playAgainButton.classList.remove("hide");
 };
 
+// if player clicks play again, remove play again button, show Guess button and reset all fields
 playAgainButton.addEventListener("click", function () {
     message.classList.remove("win");
     message.innerText = "";
