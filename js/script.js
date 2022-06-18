@@ -181,7 +181,7 @@ playAgainButton.addEventListener("click", function () {
 particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 355,
+        "value": 200,
         "density": {
           "enable": true,
           "value_area": 789.1476416322727
