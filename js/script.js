@@ -131,7 +131,7 @@ const countGuesses = function (guess) {
         message.innerText = "Good choice!";
     }
     if (remainingGuesses ===0) {
-        message.innerHTML = `Game over! The word was <span class="highlight">${word}</span>`;
+        message.innerHTML = `You lose! The word was <span class="highlight">${word}</span>`;
         startOver();
     } else if (remainingGuesses === 1) {
         remainingSpan.innerHTML = `${remainingGuesses} guess`;
@@ -147,7 +147,7 @@ const checkWin = function () {
     // remember it has to match the upperCase input
     if (word.toUpperCase() === wordInProgress.innerHTML) {
         message.classList.add("win");
-        message.innerHTML = `<p class="highlight">You guessed the word! Congrats!</p>`
+        message.innerHTML = `<p class="highlight">You won! Bitchin'!</p>`
         startOver();
         }
 };
@@ -234,7 +234,7 @@ particlesJS("particles-js", {
       },
       "move": {
         "enable": true,
-        "speed": 0.7,
+        "speed": 0.5,
         "direction": "none",
         "random": true,
         "straight": false,

@@ -31,6 +31,8 @@ canvas {
   height: 100%;
 }
 
+/* ------------ */
+
 .logo {
   width: 70%;
   max-width: 520px;
@@ -64,8 +66,8 @@ h1 {
 
 .highlight {
   padding: 0.25em;
-  background: #e1050f;
-  font-size: 1em;
+  font-size: 1.5em;
+  color: #bd170b;
 }
 
 .underline {
@@ -110,9 +112,10 @@ input {
   width: 2.25em;
   text-align: center;
   font-size: 1.5em;
-  margin-top: 0.5em;
+  margin: 1em 0 0.75em 0;
   padding: 0.5em;
-  border: 3px solid #64abdb;
+  border: 3px solid #000;
+  box-shadow: 0 0 24px #bd170b;
 }
 
 input:active,
@@ -123,12 +126,13 @@ input:focus {
 
 .guess,
 .play-again {
-  padding: 1em 3em;
-  border-radius: 50px;
+  padding: 0.25em 0.75em;
+  border-radius: 20px;
   margin-top: 1em;
-  color: #fff;
-  background: #bd170b;
-  font-size: 1em;
+  color: #bd170b;
+  background: #000;
+  font-size: 1.5em;
+  text-transform: uppercase;
   align-self: center;
   outline: none;
   border: 0;
