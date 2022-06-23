@@ -63,7 +63,7 @@ const validateInput = function (input) {
         message.interText = "Enter a letter";
     } else if (input.length > 1) {
         // Type more than one letter?
-        message.innerText = "One letter at a time, no need to rush!";
+        message.innerText = "One letter at a time, wastoid!";
     } else if (!input.match(acceptedLetter)) {
         // Typed numbers or special characters?
         message.innerText = "Letters only please!";
@@ -78,7 +78,7 @@ const makeGuess = function (guess) {
     guess = guess.toUpperCase();
     //  check if letter has already been guessed
     if (guessedLetters.includes(guess)) {
-        message.innerText = "Sorry, you've already chosen that one. Try again.";
+        message.innerText = "Why are you keeping this curiosity door locked? You've already chosen that one. Try again.";
     } else {
         // if it hasn't already been guessed then add it to the guessed letters array
         guessedLetters.push(guess);
@@ -125,13 +125,13 @@ const wordUpdate = function (guessedLetters) {
 const countGuesses = function (guess) {
     const upperWord = word.toUpperCase();
     if (!upperWord.includes(guess)) {
-        message.innerText = `Sorry, ${guess} isn't in this word`;
+        message.innerText = `Friends don't lie. ${guess} isn't in this word`;
         remainingGuesses -= 1;
     } else { 
-        message.innerText = "Good choice!";
+        message.innerText = "Bitchin'!";
     }
     if (remainingGuesses ===0) {
-        message.innerHTML = `You lose! The word was <span class="highlight">${word}</span>`;
+        message.innerHTML = `Mouthbreather! The word was <span class="highlight">${word}</span>`;
         startOver();
     } else if (remainingGuesses === 1) {
         remainingSpan.innerHTML = `${remainingGuesses} guess`;
@@ -147,7 +147,7 @@ const checkWin = function () {
     // remember it has to match the upperCase input
     if (word.toUpperCase() === wordInProgress.innerHTML) {
         message.classList.add("win");
-        message.innerHTML = `<p class="highlight">You won! Bitchin'!</p>`
+        message.innerHTML = `<p class="highlight">"Dude - you did it! You won a fight!"</p>`
         startOver();
         }
 };
