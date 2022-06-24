@@ -9,10 +9,10 @@ const playAgainButton = document.querySelector(".play-again");
 
 let word = "magnolia";
 let guessedLetters = [];
-let remainingGuesses = 8;
+let remainingGuesses = 12;
 // fetch different words from a text file
 const getWord = async function () {
-    const getWordRequest = await fetch ("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
+    const getWordRequest = await fetch ("https://gist.githubusercontent.com/niko1402/f25cb7bd98c4b1a6ec0ec9fe9aa62f7b/raw/eb2de185ca25342c22e8226f82be0c606f97da83/stranger-things-word-list");
     const words = await getWordRequest.text();
     // split the words into an array, with each word on a new line (\n)
     const wordArray = words.split("\n");
