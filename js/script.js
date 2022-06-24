@@ -12,7 +12,7 @@ let guessedLetters = [];
 let remainingGuesses = 12;
 // fetch different words from a text file
 const getWord = async function () {
-    const getWordRequest = await fetch ("https://gist.githubusercontent.com/niko1402/f25cb7bd98c4b1a6ec0ec9fe9aa62f7b/raw/eb2de185ca25342c22e8226f82be0c606f97da83/stranger-things-word-list");
+    const getWordRequest = await fetch ("https://gist.githubusercontent.com/niko1402/f25cb7bd98c4b1a6ec0ec9fe9aa62f7b/raw/b12f82b2a4edf4ae56ad8fa71f107ea8b05fb02e/stranger-things-word-list");
     const words = await getWordRequest.text();
     // split the words into an array, with each word on a new line (\n)
     const wordArray = words.split("\n");
@@ -165,7 +165,7 @@ playAgainButton.addEventListener("click", function () {
     message.classList.remove("win");
     message.innerText = "";
     guessedLettersElement.innerHTML = "";
-    remainingGuesses = 8;
+    remainingGuesses = 12;
     guessedLetters = [];
     remainingSpan.innerHTML = `${remainingGuesses} guesses`;
 
