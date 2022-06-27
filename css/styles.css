@@ -14,7 +14,7 @@ body {
   background-color: #dff6f6;
   background-image: url("../img/stranger-things.png");
   background-size: cover;
-  color: #5fd2fe;
+  color: #2291e2;
 }
 
 canvas {
@@ -77,7 +77,7 @@ h1 {
 
 .word-in-progress {
   letter-spacing: 15px;
-  color: #64abdb;
+  color: #2291e2;
   font-size: 30px;
 }
 
