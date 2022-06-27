@@ -206,7 +206,7 @@ particlesJS("particles-js", {
         }
       },
       "opacity": {
-        "value": 0.48927153781200905,
+        "value": 0.6,
         "random": false,
         "anim": {
           "enable": true,
