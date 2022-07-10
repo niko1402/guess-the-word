@@ -12,7 +12,7 @@ let guessedLetters = [];
 let remainingGuesses = 12;
 // fetch different words from a text file
 const getWord = async function () {
-    const getWordRequest = await fetch ("https://gist.githubusercontent.com/niko1402/f25cb7bd98c4b1a6ec0ec9fe9aa62f7b/raw/b12f82b2a4edf4ae56ad8fa71f107ea8b05fb02e/stranger-things-word-list");
+    const getWordRequest = await fetch ("https://gist.githubusercontent.com/niko1402/f25cb7bd98c4b1a6ec0ec9fe9aa62f7b/raw/656015a3b09a52eb50f6a68711d171d5bcc7ed16/stranger-things-word-list");
     const words = await getWordRequest.text();
     // split the words into an array, with each word on a new line (\n)
     const wordArray = words.split("\n");
@@ -30,8 +30,12 @@ getWord();
 const placeholder = function (word) {
     const placeholderLetters = [];
     for (const letter of word) {
-        console.log(letter);
+      if (guessedLetters.includes(letter) || letter === ' '){
+        placeholderLetters.push(letter);
+      } else {
+        // console.log(letter);
         placeholderLetters.push("●");
+      }
     }
 
     wordInProgress.innerText = placeholderLetters.join("");
@@ -100,7 +104,7 @@ const letterUpdate = function () {
     }
 };
 
-// function to update the word in progressed with correctly guessed letters, using guessedLetters array as para
+// function to update the word in progress with correctly guessed letters, using guessedLetters array as para
 const wordUpdate = function (guessedLetters) {
     const wordUpper = word.toUpperCase();
     // split the letters into an array
@@ -109,7 +113,7 @@ const wordUpdate = function (guessedLetters) {
     const characterUpdate = [];
     // check if the wordArray contains any letters from the guessedLetters array
     for (const letter of wordArray) {
-        if (guessedLetters.includes(letter)) {
+        if (guessedLetters.includes(letter) || letter === ' ') {
             // then add the letter to the new array
             characterUpdate.push(letter.toUpperCase())
         } else {
